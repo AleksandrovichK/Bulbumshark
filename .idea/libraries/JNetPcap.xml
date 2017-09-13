@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="JNetPcap">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jnetpcap.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../JNetPCAP" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../../../JNetPCAP" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/../../../JNetPCAP" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../JNetPCAP/src/java1.5" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../JNetPCAP" recursive="false" />
+  </library>
+</component>
