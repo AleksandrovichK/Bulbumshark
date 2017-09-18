@@ -3,7 +3,6 @@ package com.company;
 import io.kaitai.struct.KaitaiStream;
 
 import java.io.*;
-import java.util.Arrays;
 
 /*
 import org.jnetpcap.Pcap;
@@ -24,184 +23,266 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.*;
 
 class View extends JFrame {
 
-        private JScrollPane upArea;
-        private JScrollPane downArea;
+    private JScrollPane upArea;
+    private JScrollPane downArea;
 
-        private JTextArea AllPackets;
-        private JTextArea ActivePackets;
+    private JTextArea AllPackets;
+    private JTextArea ActivePackets;
+    private JTextArea StackProtocols;
 
-        private JComboBox <String> canalLevel;
-        private JComboBox <String> networkLevel;
-        private JComboBox <String> transportLevel;
-        private JComboBox <String> applicationLevel;
+    private JComboBox<String> comboProtocols;
 
-        private JTextField portField;
-        private int port;
-        private int iter=0;
-        private StringBuilder filter;
+    private JTextField portField;
+    private int port;
+    private int iter = 0;
+    private StringBuilder filtered;
 
-        private JLabel portLabel;
-        private JButton launchKey;
+    private JLabel portLabel;
+    private JButton searchKey;
+    private JButton addKey;
+    private JButton trashKey;
 
-        View() throws HeadlessException, IOException {
-            settings();
+    View() throws HeadlessException, IOException {
+        settings();
 
-            this.add(upArea);
-            this.add(downArea);
-            this.add(canalLevel);
-            this.add(networkLevel);
-            this.add(transportLevel);
-            this.add(applicationLevel);
-            this.add(portField);
-            this.add(portLabel);
-            this.add(launchKey);
-        }
-        private void settings() throws IOException {
-            this.setTitle("Bulbumshark");
-            this.setIconImage(ImageIO.read(new File("src//com//company//pics//icon.jpg")));
-            this.setResizable(false);
-            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            this.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src//com//company//pics//back.jpg")))));
-            this.setBounds(Data.leftIndent * Toolkit.getDefaultToolkit().getScreenSize().width / 100, Data.upIndent * Toolkit.getDefaultToolkit().getScreenSize().height / 100,  Data.frameWidth, Data.frameHeight);
-            this.setLayout(null);
+        this.add(upArea);
+        this.add(downArea);
+        this.add(StackProtocols);
+        this.add(searchKey);
+        this.add(addKey);
+        this.add(trashKey);
+    }
 
-            launchKey = new JButton(new ImageIcon("src//com//company//pics//search.jpg"));
-            launchKey.setBounds(Data.launchKBounds.getLeft(), Data.launchKBounds.getTop(), Data.launchKBounds.getWidth(), Data.launchKBounds.getHeight());
-            launchKey.addMouseListener(new MouseListener() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
+    private void settings() throws IOException {
+        this.setTitle("Bulbumshark");
+        this.setIconImage(ImageIO.read(new File("src//com//company//pics//icon.jpg")));
+        this.setResizable(false);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src//com//company//pics//back_2.jpg")))));
+        this.setBounds(Data.leftIndent * Toolkit.getDefaultToolkit().getScreenSize().width / 100, Data.upIndent * Toolkit.getDefaultToolkit().getScreenSize().height / 100, Data.frameWidth, Data.frameHeight);
+        this.setLayout(null);
 
+        AllPackets = new JTextArea();
+        AllPackets.setBackground(Data.centralColor);
+        AllPackets.setFont(Data.centralFontInAreas);
+        AllPackets.setAutoscrolls(true);
+        AllPackets.setBorder(BorderFactory.createCompoundBorder());
+        AllPackets.setLineWrap(true);
+        AllPackets.setWrapStyleWord(true);
+        AllPackets.setEditable(false);
+
+        upArea = new JScrollPane(AllPackets);
+        upArea.setAutoscrolls(true);
+        upArea.setBounds(Data.AllPacketsBounds.getLeft(), Data.AllPacketsBounds.getTop(), Data.AllPacketsBounds.getWidth(), Data.AllPacketsBounds.getHeight());
+
+        ActivePackets = new JTextArea();
+        ActivePackets.setBackground(Data.centralColor);
+        ActivePackets.setFont(Data.centralFontInAreas);
+        ActivePackets.setForeground(Color.GREEN);
+        ActivePackets.setBorder(BorderFactory.createCompoundBorder());
+        ActivePackets.setLineWrap(true);
+        ActivePackets.setWrapStyleWord(true);
+        ActivePackets.setEditable(false);
+
+        downArea = new JScrollPane(ActivePackets);
+        downArea.setAutoscrolls(true);
+        downArea.setBounds(Data.ActivePacketsBounds.getLeft(), Data.ActivePacketsBounds.getTop(), Data.ActivePacketsBounds.getWidth(), Data.ActivePacketsBounds.getHeight());
+
+
+        StackProtocols = new JTextArea();
+        StackProtocols.setBackground(Data.centralColor);
+        StackProtocols.setFont(Data.centralFontInAreas);
+        StackProtocols.setAutoscrolls(true);
+        StackProtocols.setBorder(BorderFactory.createCompoundBorder());
+        StackProtocols.setLineWrap(true);
+        StackProtocols.setWrapStyleWord(true);
+        StackProtocols.setEditable(false);
+        StackProtocols.setBounds(Data.StackProtocolsBounds.getLeft(), Data.StackProtocolsBounds.getTop(), Data.StackProtocolsBounds.getWidth(), Data.StackProtocolsBounds.getHeight());
+
+        comboProtocols = new JComboBox<>(new String[]{"Ethernet", "ARP", "IPv4", "IPv6","TCP", "UDP","HTTP", "DNS", "SSL/TLS"});
+        comboProtocols.addItemListener(e -> {
+            if (e.getStateChange() == ItemEvent.SELECTED) {
+                if (e.getItem().toString().equals("ARP")) System.out.println("Arp");
+                    //toMakeOnlyARP();
+                //else toMakeOnlyEthernet();
+
+            }
+            ;
+
+        });
+        comboProtocols.setBounds(Data.comboPBounds.getLeft(), Data.comboPBounds.getTop(), Data.comboPBounds.getWidth(), Data.comboPBounds.getHeight());
+
+        searchKey = new JButton(new ImageIcon("src//com//company//pics//search.png"));
+        searchKey.setBounds(Data.searchKBounds.getLeft(), Data.searchKBounds.getTop(), Data.searchKBounds.getWidth(), Data.searchKBounds.getHeight());
+        searchKey.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                searchKey.setBounds(searchKey.getX() + 2, searchKey.getY() + 2, searchKey.getWidth() - 2, searchKey.getHeight() - 2);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                searchKey.setBounds(searchKey.getX() - 2, searchKey.getY() - 2, searchKey.getWidth() + 2, searchKey.getHeight() + 2);
+
+                try {
+                    toParseFromFile();
+
+                } catch (IOException e1) {
+                    e1.printStackTrace();
                 }
+            }
 
-                @Override
-                public void mousePressed(MouseEvent e) {
-                    launchKey.setBounds(Data.launchKBounds.getLeft()+5, Data.launchKBounds.getTop()+10, Data.launchKBounds.getWidth()-10, Data.launchKBounds.getHeight()-5);
-                }
+            @Override
+            public void mouseEntered(MouseEvent e) {
 
-                @Override
-                public void mouseReleased(MouseEvent e) {
-                 //   launchKey.setBounds(Data.launchKBounds.getLeft(), Data.launchKBounds.getTop(), Data.launchKBounds.getWidth(), Data.launchKBounds.getHeight());
-                    try {
+            }
 
-                        toParseFromFile();
+            @Override
+            public void mouseExited(MouseEvent e) {
 
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }
+            }
+        });
 
-                @Override
-                public void mouseEntered(MouseEvent e) {
+        trashKey = new JButton(new ImageIcon("src//com//company//pics//trash_2.png"));
+        trashKey.setBounds(Data.trashKBounds.getLeft(), Data.trashKBounds.getTop(), Data.trashKBounds.getWidth(), Data.trashKBounds.getHeight());
+        trashKey.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
 
-                }
+            }
 
-                @Override
-                public void mouseExited(MouseEvent e) {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                trashKey.setBounds(trashKey.getX() + 2, trashKey.getY() + 2, trashKey.getWidth() - 2, trashKey.getHeight() - 2);
+            }
 
-                }
-            });
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                trashKey.setBounds(trashKey.getX() - 2, trashKey.getY() - 2, trashKey.getWidth() + 2, trashKey.getHeight() + 2);
+                AllPackets.setText("");
+                iter=0;
+            }
 
-            AllPackets = new JTextArea();
-            AllPackets.setBackground(Color.LIGHT_GRAY);
-            AllPackets.setFont(Data.centralFontInAreas);
-            AllPackets.setAutoscrolls(true);
-            AllPackets.setBorder(BorderFactory.createCompoundBorder());
-            AllPackets.setLineWrap(true);
-            AllPackets.setWrapStyleWord(true);
+            @Override
+            public void mouseEntered(MouseEvent e) {
 
-            upArea = new JScrollPane(AllPackets);
-            upArea.setAutoscrolls(true);
-            upArea.setBounds(Data.AllPacketsBounds.getLeft(), Data.AllPacketsBounds.getTop(), Data.AllPacketsBounds.getWidth(), Data.AllPacketsBounds.getHeight());
+            }
 
+            @Override
+            public void mouseExited(MouseEvent e) {
 
-            ActivePackets = new JTextArea();
-            ActivePackets.setBackground(Color.LIGHT_GRAY);
-            ActivePackets.setFont(Data.centralFontInAreas);
-            ActivePackets.setForeground(Color.GREEN);
-            ActivePackets.setBorder(BorderFactory.createCompoundBorder());
-            ActivePackets.setLineWrap(true);
-            ActivePackets.setWrapStyleWord(true);
+            }
+        });
 
-            downArea = new JScrollPane(ActivePackets);
-            downArea.setAutoscrolls(true);
-            downArea.setBounds(Data.ActivePacketsBounds.getLeft(), Data.ActivePacketsBounds.getTop(), Data.ActivePacketsBounds.getWidth(), Data.ActivePacketsBounds.getHeight());
+        addKey = new JButton(new ImageIcon("src//com//company//pics//add.png"));
+        addKey.setBounds(Data.addKBounds.getLeft(), Data.addKBounds.getTop(), Data.addKBounds.getWidth(), Data.addKBounds.getHeight());
+        addKey.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
 
-            canalLevel = new JComboBox<>(new String[]{"Ethernet", "ARP"});
-            canalLevel.addItemListener(e -> {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (e.getItem().toString().equals("ARP"))
-                        toMakeOnlyARP();
-                    else toMakeOnlyEthernet();
+            }
 
-                };
+            @Override
+            public void mousePressed(MouseEvent e) {
+                addKey.setBounds(addKey.getX() + 5, addKey.getY() + 5, addKey.getWidth() - 5, addKey.getHeight() - 5);
+            }
 
-            });
-            networkLevel = new JComboBox<>(new String[]{"IPv4"});
-            transportLevel = new JComboBox<>(new String[]{"TCP", "UDP"});
-            applicationLevel = new JComboBox<>(new String[]{"HTTP", "DNS", "Other"});
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                addKey.setBounds(addKey.getX() - 5, addKey.getY() - 5, addKey.getWidth() + 5, addKey.getHeight() + 5);
+                toShowWhatToAdd();
+            }
 
-            canalLevel.setBounds(Data.canalLBounds.getLeft(), Data.canalLBounds.getTop(), Data.canalLBounds.getWidth(), Data.canalLBounds.getHeight());
-            networkLevel.setBounds(Data.networkLBounds.getLeft(), Data.networkLBounds.getTop(), Data.networkLBounds.getWidth(), Data.networkLBounds.getHeight());
-            transportLevel.setBounds(Data.transportLBounds.getLeft(), Data.transportLBounds.getTop(), Data.transportLBounds.getWidth(), Data.transportLBounds.getHeight());
-            applicationLevel.setBounds(Data.applicationLBounds.getLeft(), Data.applicationLBounds.getTop(), Data.applicationLBounds.getWidth(), Data.applicationLBounds.getHeight());
+            @Override
+            public void mouseEntered(MouseEvent e) {
 
-            portField = new JTextField();
-            portField.setFont(Data.centralFontInKeys);
-            portField.setBorder(BorderFactory.createCompoundBorder());
-            portField.setBounds(Data.portFBounds.getLeft(), Data.portFBounds.getTop(), Data.portFBounds.getWidth(), Data.portFBounds.getHeight());
+            }
 
-            portLabel = new JLabel("port");
-            portLabel.setFont(Data.centralFontInKeys);
-            portLabel.setBounds(Data.portLBounds.getLeft(), Data.portLBounds.getTop(), Data.portLBounds.getWidth(), Data.portLBounds.getHeight());
+            @Override
+            public void mouseExited(MouseEvent e) {
 
-            filter = new StringBuilder();
+            }
+        });
 
-            this.setVisible(true);
-        }
+        filtered = new StringBuilder();
 
-    private void toMakeOnlyARP() {
-        this.remove(networkLevel);
-        this.remove(applicationLevel);
-        this.remove(transportLevel);
+        this.setVisible(true);
+    }
 
+    private void toShowWhatToAdd(){
+        if (!comboProtocols.isShowing()) this.add(comboProtocols);
         this.repaint();
     }
-    private void toMakeOnlyEthernet(){
-            this.add(networkLevel);
-            this.add(applicationLevel);
-            this.add(transportLevel);
-
-            this.repaint();
-    }
-
     private void toParseFromFile() throws IOException {
         AllPackets.setBackground(Color.WHITE);
         ActivePackets.setBackground(Color.WHITE);
+        //Vector <Pcap.Packet> packets = new Vector<>();
 
         EthernetFrame frame;
         Ipv4Packet ipv4;
+        Ipv6Packet ipv6;
         TcpSegment tcp;
         UdpDatagram udp;
 
-        Pcap p = Pcap.fromFile("material/log114MB.pcap");
+        Pcap p = Pcap.fromFile("material/log4MB.pcap");
         KaitaiStream io = p._io();
 
         while (!io.isEof()) {
             Pcap.Packet packet = new Pcap.Packet(io, p, p);
+            //packets.add(packet);
 
+            frame = (EthernetFrame) packet.body();
+
+            switch (frame.etherType().toString()){
+                case "IPV4" : {
+                    ipv4 = (Ipv4Packet) frame.body();
+                    AllPackets.append("Packet #"+(++iter)+": Ehternet -> IPv4 -> "+ipv4.protocol()+"\n");
+
+                    break;
+                }
+
+                case "IPV6" : {
+                    ipv6 = (Ipv6Packet) frame.body();
+                    AllPackets.append("Packet #"+(++iter)+": Ehternet -> IPv6 -> "+ipv6.nextHeader().getClass().getSimpleName()+"\n");
+
+                    break;
+                }
+
+                default: {break;}
+            }
         }
-    }
+        //System.out.println("ALL PACKETS HAD BEEN READ: "+packets.size());
+        }
 }
 /*
+        private void toMakeOnlyARP() {
+        this.remove(networkLevel);
+          this.remove(applicationLevel);
+          this.remove(transportLevel);
 
-*/
+          this.repaint();
+      }
+      private void toMakeOnlyEthernet() {
+         this.add(networkLevel);
+          this.add(applicationLevel);
+          this.add(transportLevel);
+
+          this.repaint();
+      }
+      */
+
+
+
 
 /*
-
                           if (ipv4.body().getClass().toString().endsWith("TcpSegment")){
                               tcp = (TcpSegment) ipv4.body();
 
@@ -220,152 +301,4 @@ class View extends JFrame {
         System.out.println(log);
     }
 }
-    /*
-    private void run(){
-             AllPackets.setBackground(Color.WHITE);
-             ActivePackets.setBackground(Color.WHITE);
-
-
-            java.util.List<PcapIf> alldevs = new ArrayList<>(); // Will be filled with NICs
-            StringBuilder errbuf = new StringBuilder(); // For any error msgs
-
-            int r = Pcap.findAllDevs(alldevs, errbuf);
-            if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
-                System.err.printf("Can't read list of devices, error is %s", errbuf
-                        .toString());
-                return;
-            }
-
-            System.out.println("Network devices found:");
-
-            int i = 0;
-            for (PcapIf device : alldevs) {
-                String description =
-                        (device.getDescription() != null) ? device.getDescription()
-                                : "No description available";
-                System.out.printf("#%d: %s [%s]\n", i++, device.getName(), description);
-            }
-
-            PcapIf device = alldevs.get(0); // We know we have atleast 1 device
-            System.out
-                    .printf("\nChoosing '%s' on your behalf:\n",
-                            (device.getDescription() != null) ? device.getDescription()
-                                    : device.getName());
-
-            int snaplen = 64 * 1024;           // Capture all packets, no trucation
-            int flags = Pcap.MODE_PROMISCUOUS; // capture all packets
-            int timeout = 10 * 1000;           // 10 seconds in millis
-            Pcap pcap =
-                    Pcap.openLive(device.getName(), snaplen, flags, timeout, errbuf);
-
-            if (pcap == null) {
-                System.err.printf("Error while opening device for capture: "
-                        + errbuf.toString());
-                return;
-            }
-      PcapPacketHandler<String> jpacketHandler = new PcapPacketHandler<String>() {
-
-                final Ethernet ethernet = new Ethernet();
-                final Arp arp = new Arp();
-                final Ip4 ip4 = new Ip4();
-                final Tcp tcp = new Tcp();
-                final Udp udp = new Udp();
-                final Http http = new Http();
-
-                public void nextPacket(PcapPacket packet, String user) {
-
-                    AllPackets.append(++iter+". ");
-                    AllPackets.append("Received packet at "+
-                            new Date(packet.getCaptureHeader().timestampInMillis())+
-                            ", length: "+
-                            packet.getCaptureHeader().caplen()+  // Length actually captured
-                            "/"+
-                            packet.getCaptureHeader().wirelen()+ // Original length
-                            " b.: "+
-                            user+"\n"                                 // User supplied object
-                    );
-
-                    filter.delete(0, filter.length());
-
-
-                    if (canalLevel.getSelectedIndex() == 0)
-                        if (packet.hasHeader(Ethernet.ID)){
-                                                          //packet.getHeader(ethernet);
-                                                          filter.append(iter).append(". ETHERNET -> ");
-
-                                                                 if (networkLevel.getSelectedIndex() == 0){
-                                                                            if (packet.hasHeader(Ip4.ID))
-                                                                           //     packet.getHeader(ip4);
-                                                                                filter.append(" IPv4 -> ");
-
-
-                                                                                if (transportLevel.getSelectedIndex() == 0)
-                                                                                           if (packet.hasHeader(Tcp.ID)){
-                                                                                            //   packet.getHeader(tcp);
-                                                                                               filter.append("TCP -> ");
-
-                                                                                                       if (applicationLevel.getSelectedIndex() == 0)
-                                                                                                               if (packet.hasHeader(Http.ID)){
-                                                                                                                   filter.append("Http\n");
-
-                                                                                                                   ActivePackets.append(filter.toString());
-                                                                                                                   downArea.revalidate();
-                                                                                                                   downArea.repaint();
-
-                                                                                                               }
-
-                                                                                           }
-
-                                                                                if (transportLevel.getSelectedIndex() == 1)
-                                                                                           if (packet.hasHeader(Udp.ID)){
-                                                                                              // packet.getHeader(udp);
-
-                                                                                                       if (applicationLevel.getSelectedIndex() == 0)
-                                                                                                           if (packet.hasHeader(Http.ID)){
-                                                                                                              filter.append("UDP -> Http\n");
-
-                                                                                                               ActivePackets.append(filter.toString());
-                                                                                                               downArea.revalidate();
-                                                                                                               downArea.repaint();
-                                                                                                          }
-                                                                                                          else {
-                                                                                                               filter.append("UDP\n");
-                                                                                                               ActivePackets.append(filter.toString());
-                                                                                                               downArea.revalidate();
-                                                                                                               downArea.repaint();
-                                                                                                           }
-
-                                                                                           }
-
-
-                                                          }
-                        }
-
-
-                    /*if (canalLevel.getSelectedIndex() == 1)
-                        System.out.println(packet.getHeader(arp).toString());
-                    {
-//                        packet.getHeader(arp);
-                        ActivePackets.append(iter+". ARP (v."+arp.protocolType()+") -> \n");
-
-                        downArea.revalidate();
-                        downArea.repaint();
-                    }
-                }
-
-                public void toPrintLog() throws FileNotFoundException {
-                    FileOutputStream fos = new FileOutputStream("parsed.log");
-                    PrintStream printStream = new PrintStream(fos);
-                    printStream.println(ActivePackets);
-                }
-            };
-
-            System.out.println(canalLevel.getSelectedIndex());
-            System.out.println(networkLevel.getSelectedIndex());
-            System.out.println(transportLevel.getSelectedIndex());
-            System.out.println(applicationLevel.getSelectedIndex());
-
-            pcap.loop(3000, jpacketHandler, "interface #0");
-            pcap.close();
-
-        }*/
+*/
