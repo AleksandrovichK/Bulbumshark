@@ -23,7 +23,7 @@ class View extends JFrame {
     private Vector <String> vectorOfProtocols;
 
     private JComboBox<String> comboProtocols;
-    private String[] protocols = {"Ethernet", "ARP", "IPv4", "IPv6","TCP", "UDP","HTTP", "DNS", "SSL/TLS"};
+    private String[] protocols = {"Ethernet", "IPv4", "IPv6","TCP", "UDP","HTTP", "DNS", "SSL/TLS"};
 
     private int iter = 0;
 
@@ -309,6 +309,7 @@ class View extends JFrame {
         }
     private void toFiltrate() throws IOException {
         iter = 0;
+        ActivePackets.setText("");
 
         EthernetFrame frame = null;
         Ipv4Packet ipv4 = null;
@@ -326,51 +327,61 @@ class View extends JFrame {
             Object container = packet.body();
             frame = (EthernetFrame) container;
 
-            if (!frame.body().getClass().getSimpleName().equals("Ipv4Packet")) System.out.println(frame.body().getClass().getSimpleName());
+         //   if (!frame.body().getClass().getSimpleName().equals("Ipv4Packet")) System.out.println(frame.body().getClass().getSimpleName());
 
 
             for (int protIter = 0; protIter < vectorOfProtocols.size(); protIter++) {
                 switch (vectorOfProtocols.get(protIter)) {
                     case "Ethernet": {
                             if (container.getClass().getSimpleName().equals("EthernetFrame")){
-                        //        System.out.println(container.getClass().getSimpleName());
-                                ActivePackets.append(protIter==1? ++iter+". Ethernet": " -> Ethernet");
-                                ActivePackets.append(protIter == vectorOfProtocols.size()? "\n" : "");
+                                ActivePackets.append(protIter==0? (++iter)+". Ethernet": " -> Ethernet");
+                                ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
                                 frame = (EthernetFrame) container;
                                 container = frame.body();
-                          //      System.out.println(container.getClass().getSimpleName());
                             }
                         break;
                     }
-                    case "ARP": {
-                        if (container.getClass().getSimpleName().equals("ARP")){
-                            ActivePackets.append(protIter==1? ++iter+". ARP": " -> ARP");
-                            ActivePackets.append(protIter == vectorOfProtocols.size()? "\n" : "");
 
-                            //ARP class doesn't exist!
-                            frame = (EthernetFrame) container;
-                            container = frame.body();
+                    case "IPv4": {
+                        if (container.getClass().getSimpleName().equals("Ipv4Packet")){
+                            ActivePackets.append(protIter==0? (++iter)+". IPv4": " -> IPv4");
+                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+
+                            ipv4 = (Ipv4Packet) container;
+                            container = ipv4.body();
                         }
                         break;
                     }
-                    case "IPv4": {
-                        if (null != frame)
-                            ipv4 = (Ipv4Packet) frame.body();
-                        ActivePackets.append(" -> IPv4");
-                        break;
-
-                    }
                     case "IPv6": {
+                        if (container.getClass().getSimpleName().equals("Ipv6Packet")){
+                            ActivePackets.append(protIter==0? (++iter)+". IPv6": " -> IPv6");
+                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
+                            ipv6 = (Ipv6Packet) container;
+                            container = ipv6.nextHeader();
+                        }
+                        break;
                     }
                     case "TCP": {
-                        if (null != ipv4)
-                            System.out.println(ipv4.protocol());
+                        if (container.getClass().getSimpleName().equals("TcpSegment")){
+                            ActivePackets.append(protIter==0? (++iter)+". TCP": " -> TCP");
+                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
+                            tcp = (TcpSegment) container;
+                            container = tcp.body();
+                        }
+                        break;
                     }
                     case "UDP": {
+                        if (container.getClass().getSimpleName().equals("UdpDatagram")){
+                            ActivePackets.append(protIter==0? (++iter)+". UDP": " -> UDP");
+                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
+                            udp = (UdpDatagram) container;
+                            container = udp.body();
+                        }
+                        break;
                     }
                     case "HTTP": {
 

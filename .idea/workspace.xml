@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de062671-60e2-4fea-a008-f02301749f2c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/pics/clearstack.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/pics/filter.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_spring4_Release.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_spring4_Release.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Data.java" afterPath="$PROJECT_DIR$/src/com/company/Data.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/View.java" afterPath="$PROJECT_DIR$/src/com/company/View.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/company/pics/back_2.jpg" afterPath="$PROJECT_DIR$/src/com/company/pics/back_upd.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/company/pics/trash_2.png" afterPath="$PROJECT_DIR$/src/com/company/pics/trash.png" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,35 +19,35 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="330" column="0" lean-forward="true" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="332" column="30" lean-forward="true" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#View#0;class#View#0" expanded="false" />
-                <element signature="e#3846#4023#0" expanded="false" />
-                <element signature="class#4456:5422" expanded="false" />
-                <element signature="method#mouseClicked#0;class#4456:5422" expanded="false" />
-                <element signature="method#mousePressed#0;class#4456:5422" expanded="false" />
-                <element signature="method#mouseReleased#0;class#4456:5422" expanded="false" />
-                <element signature="method#mouseEntered#0;class#4456:5422" expanded="false" />
-                <element signature="method#mouseExited#0;class#4456:5422" expanded="false" />
-                <element signature="class#5695:6557" expanded="false" />
-                <element signature="method#mouseClicked#0;class#5695:6557" expanded="false" />
-                <element signature="method#mousePressed#0;class#5695:6557" expanded="false" />
-                <element signature="method#mouseReleased#0;class#5695:6557" expanded="false" />
-                <element signature="method#mouseEntered#0;class#5695:6557" expanded="false" />
-                <element signature="method#mouseExited#0;class#5695:6557" expanded="false" />
-                <element signature="class#6814:7754" expanded="false" />
-                <element signature="method#mouseClicked#0;class#6814:7754" expanded="false" />
-                <element signature="method#mouseReleased#0;class#6814:7754" expanded="false" />
-                <element signature="method#mouseEntered#0;class#6814:7754" expanded="false" />
-                <element signature="method#mouseExited#0;class#6814:7754" expanded="false" />
-                <element signature="method#mouseEntered#0;class#8055:8994" expanded="false" />
-                <element signature="method#mouseExited#0;class#8055:8994" expanded="false" />
-                <element signature="class#9275:10164" expanded="false" />
-                <element signature="method#mouseClicked#0;class#9275:10164" expanded="false" />
-                <element signature="method#mouseEntered#0;class#9275:10164" expanded="false" />
-                <element signature="method#mouseExited#0;class#9275:10164" expanded="false" />
+                <element signature="e#3839#4016#0" expanded="false" />
+                <element signature="class#4449:5415" expanded="false" />
+                <element signature="method#mouseClicked#0;class#4449:5415" expanded="false" />
+                <element signature="method#mousePressed#0;class#4449:5415" expanded="false" />
+                <element signature="method#mouseReleased#0;class#4449:5415" expanded="false" />
+                <element signature="method#mouseEntered#0;class#4449:5415" expanded="false" />
+                <element signature="method#mouseExited#0;class#4449:5415" expanded="false" />
+                <element signature="class#5688:6550" expanded="false" />
+                <element signature="method#mouseClicked#0;class#5688:6550" expanded="false" />
+                <element signature="method#mousePressed#0;class#5688:6550" expanded="false" />
+                <element signature="method#mouseReleased#0;class#5688:6550" expanded="false" />
+                <element signature="method#mouseEntered#0;class#5688:6550" expanded="false" />
+                <element signature="method#mouseExited#0;class#5688:6550" expanded="false" />
+                <element signature="class#6807:7747" expanded="false" />
+                <element signature="method#mouseClicked#0;class#6807:7747" expanded="false" />
+                <element signature="method#mouseReleased#0;class#6807:7747" expanded="false" />
+                <element signature="method#mouseEntered#0;class#6807:7747" expanded="false" />
+                <element signature="method#mouseExited#0;class#6807:7747" expanded="false" />
+                <element signature="method#mouseEntered#0;class#8048:8987" expanded="false" />
+                <element signature="method#mouseExited#0;class#8048:8987" expanded="false" />
+                <element signature="class#9268:10157" expanded="false" />
+                <element signature="method#mouseClicked#0;class#9268:10157" expanded="false" />
+                <element signature="method#mouseEntered#0;class#9268:10157" expanded="false" />
+                <element signature="method#mouseExited#0;class#9268:10157" expanded="false" />
                 <element signature="method#toLookPreview#0;class#View#0" expanded="false" />
               </folding>
             </state>
@@ -706,7 +699,7 @@
       <workItem from="1505491134943" duration="3758000" />
       <workItem from="1505723765246" duration="6157000" />
       <workItem from="1505734440087" duration="7980000" />
-      <workItem from="1505748982949" duration="5078000" />
+      <workItem from="1505748982949" duration="6461000" />
     </task>
     <task id="LOCAL-00001" summary="New branch &quot;Online&quot;, where in commented method &quot;run&quot; still online implementation">
       <created>1505333864301</created>
@@ -722,11 +715,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505729934189</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="The last place where ARP still exist">
+      <created>1505754211674</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1505754211674</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84236000" />
+    <option name="totallyTimeSpent" value="85619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -744,7 +744,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5691906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -775,25 +775,32 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New branch &quot;Online&quot;, where in commented method &quot;run&quot; still online implementation" />
     <MESSAGE value="Added new buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new buttons" />
+    <MESSAGE value="The last place where ARP still exist" />
+    <option name="LAST_COMMIT_MESSAGE" value="The last place where ARP still exist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/View.java</url>
-          <line>347</line>
+          <line>360</line>
           <properties />
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/View.java</url>
-          <line>334</line>
+          <line>370</line>
           <properties />
-          <option name="timeStamp" value="43" />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/View.java</url>
+          <line>380</line>
+          <properties />
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="44" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1148,35 +1155,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="330" column="0" lean-forward="true" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="332" column="30" lean-forward="true" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#View#0;class#View#0" expanded="false" />
-            <element signature="e#3846#4023#0" expanded="false" />
-            <element signature="class#4456:5422" expanded="false" />
-            <element signature="method#mouseClicked#0;class#4456:5422" expanded="false" />
-            <element signature="method#mousePressed#0;class#4456:5422" expanded="false" />
-            <element signature="method#mouseReleased#0;class#4456:5422" expanded="false" />
-            <element signature="method#mouseEntered#0;class#4456:5422" expanded="false" />
-            <element signature="method#mouseExited#0;class#4456:5422" expanded="false" />
-            <element signature="class#5695:6557" expanded="false" />
-            <element signature="method#mouseClicked#0;class#5695:6557" expanded="false" />
-            <element signature="method#mousePressed#0;class#5695:6557" expanded="false" />
-            <element signature="method#mouseReleased#0;class#5695:6557" expanded="false" />
-            <element signature="method#mouseEntered#0;class#5695:6557" expanded="false" />
-            <element signature="method#mouseExited#0;class#5695:6557" expanded="false" />
-            <element signature="class#6814:7754" expanded="false" />
-            <element signature="method#mouseClicked#0;class#6814:7754" expanded="false" />
-            <element signature="method#mouseReleased#0;class#6814:7754" expanded="false" />
-            <element signature="method#mouseEntered#0;class#6814:7754" expanded="false" />
-            <element signature="method#mouseExited#0;class#6814:7754" expanded="false" />
-            <element signature="method#mouseEntered#0;class#8055:8994" expanded="false" />
-            <element signature="method#mouseExited#0;class#8055:8994" expanded="false" />
-            <element signature="class#9275:10164" expanded="false" />
-            <element signature="method#mouseClicked#0;class#9275:10164" expanded="false" />
-            <element signature="method#mouseEntered#0;class#9275:10164" expanded="false" />
-            <element signature="method#mouseExited#0;class#9275:10164" expanded="false" />
+            <element signature="e#3839#4016#0" expanded="false" />
+            <element signature="class#4449:5415" expanded="false" />
+            <element signature="method#mouseClicked#0;class#4449:5415" expanded="false" />
+            <element signature="method#mousePressed#0;class#4449:5415" expanded="false" />
+            <element signature="method#mouseReleased#0;class#4449:5415" expanded="false" />
+            <element signature="method#mouseEntered#0;class#4449:5415" expanded="false" />
+            <element signature="method#mouseExited#0;class#4449:5415" expanded="false" />
+            <element signature="class#5688:6550" expanded="false" />
+            <element signature="method#mouseClicked#0;class#5688:6550" expanded="false" />
+            <element signature="method#mousePressed#0;class#5688:6550" expanded="false" />
+            <element signature="method#mouseReleased#0;class#5688:6550" expanded="false" />
+            <element signature="method#mouseEntered#0;class#5688:6550" expanded="false" />
+            <element signature="method#mouseExited#0;class#5688:6550" expanded="false" />
+            <element signature="class#6807:7747" expanded="false" />
+            <element signature="method#mouseClicked#0;class#6807:7747" expanded="false" />
+            <element signature="method#mouseReleased#0;class#6807:7747" expanded="false" />
+            <element signature="method#mouseEntered#0;class#6807:7747" expanded="false" />
+            <element signature="method#mouseExited#0;class#6807:7747" expanded="false" />
+            <element signature="method#mouseEntered#0;class#8048:8987" expanded="false" />
+            <element signature="method#mouseExited#0;class#8048:8987" expanded="false" />
+            <element signature="class#9268:10157" expanded="false" />
+            <element signature="method#mouseClicked#0;class#9268:10157" expanded="false" />
+            <element signature="method#mouseEntered#0;class#9268:10157" expanded="false" />
+            <element signature="method#mouseExited#0;class#9268:10157" expanded="false" />
             <element signature="method#toLookPreview#0;class#View#0" expanded="false" />
           </folding>
         </state>
