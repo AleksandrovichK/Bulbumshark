@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de062671-60e2-4fea-a008-f02301749f2c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config/protocols.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Mojarra_2_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_spring4_Release.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FourthCourseTermPaper.iml" afterPath="$PROJECT_DIR$/FourthCourseTermPaper.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/View.java" afterPath="$PROJECT_DIR$/src/com/company/View.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -16,39 +21,63 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="332" column="30" lean-forward="true" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
+            <state relative-caret-position="715">
+              <caret line="300" column="0" lean-forward="false" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#View#0;class#View#0" expanded="false" />
-                <element signature="e#3839#4016#0" expanded="false" />
-                <element signature="class#4449:5415" expanded="false" />
-                <element signature="method#mouseClicked#0;class#4449:5415" expanded="false" />
-                <element signature="method#mousePressed#0;class#4449:5415" expanded="false" />
-                <element signature="method#mouseReleased#0;class#4449:5415" expanded="false" />
-                <element signature="method#mouseEntered#0;class#4449:5415" expanded="false" />
-                <element signature="method#mouseExited#0;class#4449:5415" expanded="false" />
-                <element signature="class#5688:6550" expanded="false" />
-                <element signature="method#mouseClicked#0;class#5688:6550" expanded="false" />
-                <element signature="method#mousePressed#0;class#5688:6550" expanded="false" />
-                <element signature="method#mouseReleased#0;class#5688:6550" expanded="false" />
-                <element signature="method#mouseEntered#0;class#5688:6550" expanded="false" />
-                <element signature="method#mouseExited#0;class#5688:6550" expanded="false" />
-                <element signature="class#6807:7747" expanded="false" />
-                <element signature="method#mouseClicked#0;class#6807:7747" expanded="false" />
-                <element signature="method#mouseReleased#0;class#6807:7747" expanded="false" />
-                <element signature="method#mouseEntered#0;class#6807:7747" expanded="false" />
-                <element signature="method#mouseExited#0;class#6807:7747" expanded="false" />
-                <element signature="method#mouseEntered#0;class#8048:8987" expanded="false" />
-                <element signature="method#mouseExited#0;class#8048:8987" expanded="false" />
-                <element signature="class#9268:10157" expanded="false" />
-                <element signature="method#mouseClicked#0;class#9268:10157" expanded="false" />
-                <element signature="method#mouseEntered#0;class#9268:10157" expanded="false" />
-                <element signature="method#mouseExited#0;class#9268:10157" expanded="false" />
+                <element signature="e#4068#4245#0" expanded="false" />
+                <element signature="class#4678:5644" expanded="false" />
+                <element signature="method#mouseClicked#0;class#4678:5644" expanded="false" />
+                <element signature="method#mousePressed#0;class#4678:5644" expanded="false" />
+                <element signature="method#mouseReleased#0;class#4678:5644" expanded="false" />
+                <element signature="method#mouseEntered#0;class#4678:5644" expanded="false" />
+                <element signature="method#mouseExited#0;class#4678:5644" expanded="false" />
+                <element signature="class#5917:6779" expanded="false" />
+                <element signature="method#mouseClicked#0;class#5917:6779" expanded="false" />
+                <element signature="method#mousePressed#0;class#5917:6779" expanded="false" />
+                <element signature="method#mouseReleased#0;class#5917:6779" expanded="false" />
+                <element signature="method#mouseEntered#0;class#5917:6779" expanded="false" />
+                <element signature="method#mouseExited#0;class#5917:6779" expanded="false" />
+                <element signature="class#7036:8083" expanded="false" />
+                <element signature="method#mouseClicked#0;class#7036:8083" expanded="false" />
+                <element signature="method#mousePressed#0;class#7036:8083" expanded="false" />
+                <element signature="method#mouseEntered#0;class#7036:8083" expanded="false" />
+                <element signature="method#mouseExited#0;class#7036:8083" expanded="false" />
+                <element signature="class#8384:9323" expanded="false" />
+                <element signature="method#mouseEntered#0;class#8384:9323" expanded="false" />
+                <element signature="method#mouseExited#0;class#8384:9323" expanded="false" />
+                <element signature="class#9604:10635" expanded="false" />
+                <element signature="method#mouseClicked#0;class#9604:10635" expanded="false" />
+                <element signature="method#mouseEntered#0;class#9604:10635" expanded="false" />
+                <element signature="method#mouseExited#0;class#9604:10635" expanded="false" />
                 <element signature="method#toLookPreview#0;class#View#0" expanded="false" />
+                <element signature="method#toFiltrate#0;class#View#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="protocols.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/config/protocols.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DnsPacket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/DnsPacket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2669">
+              <caret line="193" column="9" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+              <folding>
+                <element signature="class#TypeType#0;class#DnsPacket#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,6 +113,9 @@
       <find>filter</find>
       <find>filtra</find>
       <find>protoco</find>
+      <find>Http</find>
+      <find>HTTP</find>
+      <find>filt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,7 +148,10 @@
         <option value="$PROJECT_DIR$/src/com/company/DnsPacket.java" />
         <option value="$PROJECT_DIR$/src/com/company/TlsClientHello.java" />
         <option value="$PROJECT_DIR$/src/com/company/Data.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Pcap.java" />
+        <option value="$PROJECT_DIR$/config/protocols.txt" />
         <option value="$PROJECT_DIR$/src/com/company/View.java" />
+        <option value="$PROJECT_DIR$/src/config/protocols.txt" />
       </list>
     </option>
   </component>
@@ -131,6 +166,28 @@
     <option name="y" value="-8" />
     <option name="width" value="1616" />
     <option name="height" value="876" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>EqualsBetweenInconvertibleTypes</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -148,6 +205,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,7 +246,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -196,20 +254,22 @@
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../IntelliJ IDEA 2017.1/Programmes/MyFirstOrder" />
     <property name="SearchEverywhereHistoryKey" value="JVM&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Programs\IntelliJ IDEA Ultimate 2017.1.2\Programmes\FourthCourseTermPaper\src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.company" />
     </key>
@@ -699,7 +759,11 @@
       <workItem from="1505491134943" duration="3758000" />
       <workItem from="1505723765246" duration="6157000" />
       <workItem from="1505734440087" duration="7980000" />
-      <workItem from="1505748982949" duration="6461000" />
+      <workItem from="1505748982949" duration="6541000" />
+      <workItem from="1505815826660" duration="207000" />
+      <workItem from="1505816730014" duration="5117000" />
+      <workItem from="1506936973048" duration="231000" />
+      <workItem from="1507102640703" duration="2741000" />
     </task>
     <task id="LOCAL-00001" summary="New branch &quot;Online&quot;, where in commented method &quot;run&quot; still online implementation">
       <created>1505333864301</created>
@@ -722,48 +786,59 @@
       <option name="project" value="LOCAL" />
       <updated>1505754211674</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="No bugs, but works not correctly. There have to be counter, how much protocols were been">
+      <created>1505755628800</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1505755628800</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85619000" />
+    <option name="totallyTimeSpent" value="93995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5691906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33028722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5143603" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -776,31 +851,20 @@
     <MESSAGE value="New branch &quot;Online&quot;, where in commented method &quot;run&quot; still online implementation" />
     <MESSAGE value="Added new buttons" />
     <MESSAGE value="The last place where ARP still exist" />
-    <option name="LAST_COMMIT_MESSAGE" value="The last place where ARP still exist" />
+    <MESSAGE value="No bugs, but works not correctly. There have to be counter, how much protocols were been" />
+    <option name="LAST_COMMIT_MESSAGE" value="No bugs, but works not correctly. There have to be counter, how much protocols were been" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/View.java</url>
-          <line>360</line>
+          <line>300</line>
           <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/View.java</url>
-          <line>370</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/View.java</url>
-          <line>380</line>
-          <properties />
-          <option name="timeStamp" value="47" />
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="48" />
+      <option name="time" value="64" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -809,22 +873,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../../JDK/src.zip!/java/lang/ClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31671">
@@ -956,13 +1004,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/kaitai/IcmpPacket.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/TcpSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../../JDK/src.zip!/java/awt/AWTEventMulticaster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1062,49 +1103,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Pcap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#fromFile#0;class#Pcap#0" expanded="false" />
-            <element signature="class#Linktype#0;class#Pcap#0" expanded="false" />
-            <element signature="method#Pcap#0;class#Pcap#0" expanded="false" />
-            <element signature="method#Pcap#1;class#Pcap#0" expanded="false" />
-            <element signature="method#Pcap#2;class#Pcap#0" expanded="false" />
-            <element signature="docComment;class#Header#0;class#Pcap#0" expanded="false" />
-            <element signature="class#Header#0;class#Pcap#0" expanded="false" />
-            <element signature="docComment;class#Packet#0;class#Pcap#0" expanded="false" />
-            <element signature="method#fromFile#0;class#Packet#0;class#Pcap#0" expanded="false" />
-            <element signature="method#Packet#0;class#Packet#0;class#Pcap#0" expanded="false" />
-            <element signature="method#Packet#1;class#Packet#0;class#Pcap#0" expanded="false" />
-            <element signature="method#Packet#2;class#Packet#0;class#Pcap#0" expanded="false" />
-            <element signature="method#_read#0;class#Packet#0;class#Pcap#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/EthernetFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/kaitai/struct/KaitaiStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="66" column="11" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/DnsPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/TlsClientHello.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1153,39 +1151,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Pcap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="274" column="38" lean-forward="true" selection-start-line="274" selection-start-column="38" selection-end-line="274" selection-end-column="38" />
+          <folding>
+            <element signature="class#Linktype#0;class#Pcap#0" expanded="false" />
+            <element signature="method#Pcap#1;class#Pcap#0" expanded="false" />
+            <element signature="method#Pcap#2;class#Pcap#0" expanded="false" />
+            <element signature="e#3913#3914#0" expanded="true" />
+            <element signature="e#3973#3974#0" expanded="true" />
+            <element signature="docComment;class#Header#0;class#Pcap#0" expanded="false" />
+            <element signature="docComment;method#thiszone#0;class#Header#0;class#Pcap#0" expanded="false" />
+            <element signature="docComment;method#sigfigs#0;class#Header#0;class#Pcap#0" expanded="false" />
+            <element signature="docComment;method#snaplen#0;class#Header#0;class#Pcap#0" expanded="false" />
+            <element signature="docComment;method#network#0;class#Header#0;class#Pcap#0" expanded="false" />
+            <element signature="method#fromFile#0;class#Packet#0;class#Pcap#0" expanded="false" />
+            <element signature="method#Packet#0;class#Packet#0;class#Pcap#0" expanded="false" />
+            <element signature="method#Packet#1;class#Packet#0;class#Pcap#0" expanded="false" />
+            <element signature="method#Packet#2;class#Packet#0;class#Pcap#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/kaitai/struct/KaitaiStruct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/TcpSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/EthernetFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="59" column="25" lean-forward="false" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/kaitai/struct/KaitaiStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="66" column="11" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/DnsPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2669">
+          <caret line="193" column="9" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+          <folding>
+            <element signature="class#TypeType#0;class#DnsPacket#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="332" column="30" lean-forward="true" selection-start-line="332" selection-start-column="30" selection-end-line="332" selection-end-column="30" />
+        <state relative-caret-position="715">
+          <caret line="300" column="0" lean-forward="false" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#View#0;class#View#0" expanded="false" />
-            <element signature="e#3839#4016#0" expanded="false" />
-            <element signature="class#4449:5415" expanded="false" />
-            <element signature="method#mouseClicked#0;class#4449:5415" expanded="false" />
-            <element signature="method#mousePressed#0;class#4449:5415" expanded="false" />
-            <element signature="method#mouseReleased#0;class#4449:5415" expanded="false" />
-            <element signature="method#mouseEntered#0;class#4449:5415" expanded="false" />
-            <element signature="method#mouseExited#0;class#4449:5415" expanded="false" />
-            <element signature="class#5688:6550" expanded="false" />
-            <element signature="method#mouseClicked#0;class#5688:6550" expanded="false" />
-            <element signature="method#mousePressed#0;class#5688:6550" expanded="false" />
-            <element signature="method#mouseReleased#0;class#5688:6550" expanded="false" />
-            <element signature="method#mouseEntered#0;class#5688:6550" expanded="false" />
-            <element signature="method#mouseExited#0;class#5688:6550" expanded="false" />
-            <element signature="class#6807:7747" expanded="false" />
-            <element signature="method#mouseClicked#0;class#6807:7747" expanded="false" />
-            <element signature="method#mouseReleased#0;class#6807:7747" expanded="false" />
-            <element signature="method#mouseEntered#0;class#6807:7747" expanded="false" />
-            <element signature="method#mouseExited#0;class#6807:7747" expanded="false" />
-            <element signature="method#mouseEntered#0;class#8048:8987" expanded="false" />
-            <element signature="method#mouseExited#0;class#8048:8987" expanded="false" />
-            <element signature="class#9268:10157" expanded="false" />
-            <element signature="method#mouseClicked#0;class#9268:10157" expanded="false" />
-            <element signature="method#mouseEntered#0;class#9268:10157" expanded="false" />
-            <element signature="method#mouseExited#0;class#9268:10157" expanded="false" />
+            <element signature="e#4068#4245#0" expanded="false" />
+            <element signature="class#4678:5644" expanded="false" />
+            <element signature="method#mouseClicked#0;class#4678:5644" expanded="false" />
+            <element signature="method#mousePressed#0;class#4678:5644" expanded="false" />
+            <element signature="method#mouseReleased#0;class#4678:5644" expanded="false" />
+            <element signature="method#mouseEntered#0;class#4678:5644" expanded="false" />
+            <element signature="method#mouseExited#0;class#4678:5644" expanded="false" />
+            <element signature="class#5917:6779" expanded="false" />
+            <element signature="method#mouseClicked#0;class#5917:6779" expanded="false" />
+            <element signature="method#mousePressed#0;class#5917:6779" expanded="false" />
+            <element signature="method#mouseReleased#0;class#5917:6779" expanded="false" />
+            <element signature="method#mouseEntered#0;class#5917:6779" expanded="false" />
+            <element signature="method#mouseExited#0;class#5917:6779" expanded="false" />
+            <element signature="class#7036:8083" expanded="false" />
+            <element signature="method#mouseClicked#0;class#7036:8083" expanded="false" />
+            <element signature="method#mousePressed#0;class#7036:8083" expanded="false" />
+            <element signature="method#mouseEntered#0;class#7036:8083" expanded="false" />
+            <element signature="method#mouseExited#0;class#7036:8083" expanded="false" />
+            <element signature="class#8384:9323" expanded="false" />
+            <element signature="method#mouseEntered#0;class#8384:9323" expanded="false" />
+            <element signature="method#mouseExited#0;class#8384:9323" expanded="false" />
+            <element signature="class#9604:10635" expanded="false" />
+            <element signature="method#mouseClicked#0;class#9604:10635" expanded="false" />
+            <element signature="method#mouseEntered#0;class#9604:10635" expanded="false" />
+            <element signature="method#mouseExited#0;class#9604:10635" expanded="false" />
             <element signature="method#toLookPreview#0;class#View#0" expanded="false" />
+            <element signature="method#toFiltrate#0;class#View#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/protocols.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,7 +1277,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web</last-edited>
+          <last-edited>Detection</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

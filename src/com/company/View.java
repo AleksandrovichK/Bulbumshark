@@ -21,11 +21,14 @@ class View extends JFrame {
     private JTextArea StackProtocols;
 
     private Vector <String> vectorOfProtocols;
+    private Vector <String> vectorOfInputProtocols;
 
     private JComboBox<String> comboProtocols;
     private String[] protocols = {"Ethernet", "IPv4", "IPv6","TCP", "UDP","HTTP", "DNS", "SSL/TLS"};
 
     private int iter = 0;
+    private int used = 0;
+    private StringBuffer filtered;
 
     private JButton searchKey;
     private JButton addKey;
@@ -52,9 +55,14 @@ class View extends JFrame {
         this.setIconImage(ImageIO.read(new File("src//com//company//pics//icon.jpg")));
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src//com//company//pics//back_upd.jpg")))));
+        this.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src//com//company//pics//back9.png")))));
         this.setBounds(Data.leftIndent * Toolkit.getDefaultToolkit().getScreenSize().width / 100, Data.upIndent * Toolkit.getDefaultToolkit().getScreenSize().height / 100, Data.frameWidth, Data.frameHeight);
         this.setLayout(null);
+
+        vectorOfProtocols = new Vector<>();
+        vectorOfInputProtocols = new Vector<>();
+
+        toReadConfig();
 
         AllPackets = new JTextArea();
         AllPackets.setBackground(Data.centralColor);
@@ -185,8 +193,11 @@ class View extends JFrame {
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                StackProtocols.setBackground(Color.WHITE);
                 addKey.setBounds(addKey.getX() - 5, addKey.getY() - 5, addKey.getWidth() + 5, addKey.getHeight() + 5);
+                StackProtocols.setBackground(Color.WHITE);
+
+                if (StackProtocols.getText().equals("No protocols chosen!")) StackProtocols.setText("");
+
                 StackProtocols.append(""+comboProtocols.getSelectedItem()+'\n');
                 vectorOfProtocols.add(comboProtocols.getSelectedItem().toString());
             }
@@ -249,10 +260,13 @@ class View extends JFrame {
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                ActivePackets.setBackground(Color.WHITE);
                 filterKey.setBounds(filterKey.getX() - 2, filterKey.getY() - 2, filterKey.getWidth() + 2, filterKey.getHeight() + 2);
 
-                try {toFiltrate();} catch (IOException e1) {e1.printStackTrace();}
+                if (!vectorOfProtocols.isEmpty()){
+                ActivePackets.setBackground(Color.WHITE);
+                    try {toFiltrate();} catch (IOException e1) {e1.printStackTrace();}
+                }
+                else StackProtocols.setText("No protocols chosen!");
             }
 
             @Override
@@ -266,10 +280,36 @@ class View extends JFrame {
             }
         });
 
-        vectorOfProtocols = new Vector<>();
+        filtered = new StringBuffer();
 
         this.setVisible(true);
     }
+
+    private void toReadConfig() throws IOException {
+        InputStream inputStream = Main.class.getResourceAsStream("/config/protocols.txt");
+
+        if (inputStream != null) //NO FILE WITH CONFIGURATION
+        {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+            String line;
+            while ((line = reader.readLine()) != null)
+            {
+                while (!line.equals("</pr>") && !line.equals("</protocols>")){
+                    if (!line.isEmpty() && line.charAt(0) != '<')
+                           if (line.substring(0, line.indexOf('=')).equals("name"))
+                                vectorOfInputProtocols.addElement(line.substring(line.indexOf('\"')+1,line.lastIndexOf('\"')));
+                    line = reader.readLine();
+                }
+            }
+            inputStream.close();
+            System.out.println(vectorOfInputProtocols);
+        }
+        else {
+            System.out.println("Error: not found file with protocols!");
+        }
+    }
+
     private void toLookPreview() throws IOException {
         EthernetFrame frame;
         Ipv4Packet ipv4;
@@ -325,74 +365,98 @@ class View extends JFrame {
         while (!io.isEof()) {
             Pcap.Packet packet = new Pcap.Packet(io, p, p);
             Object container = packet.body();
-            frame = (EthernetFrame) container;
 
-         //   if (!frame.body().getClass().getSimpleName().equals("Ipv4Packet")) System.out.println(frame.body().getClass().getSimpleName());
-
+            filtered.delete(0, filtered.length());
+            used = 0;
 
             for (int protIter = 0; protIter < vectorOfProtocols.size(); protIter++) {
                 switch (vectorOfProtocols.get(protIter)) {
                     case "Ethernet": {
                             if (container.getClass().getSimpleName().equals("EthernetFrame")){
-                                ActivePackets.append(protIter==0? (++iter)+". Ethernet": " -> Ethernet");
-                                ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+                                filtered.append(protIter==0? (++iter)+". Ethernet": " -> Ethernet");
+                                filtered.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
                                 frame = (EthernetFrame) container;
                                 container = frame.body();
+                                used++;
                             }
                         break;
                     }
 
                     case "IPv4": {
                         if (container.getClass().getSimpleName().equals("Ipv4Packet")){
-                            ActivePackets.append(protIter==0? (++iter)+". IPv4": " -> IPv4");
-                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+                            filtered.append(protIter==0? (++iter)+". IPv4": " -> IPv4");
+                            filtered.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
                             ipv4 = (Ipv4Packet) container;
                             container = ipv4.body();
+                            used++;
                         }
                         break;
                     }
                     case "IPv6": {
                         if (container.getClass().getSimpleName().equals("Ipv6Packet")){
-                            ActivePackets.append(protIter==0? (++iter)+". IPv6": " -> IPv6");
-                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+                            filtered.append(protIter==0? (++iter)+". IPv6": " -> IPv6");
+                            filtered.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
                             ipv6 = (Ipv6Packet) container;
                             container = ipv6.nextHeader();
+                            used++;
                         }
                         break;
                     }
                     case "TCP": {
                         if (container.getClass().getSimpleName().equals("TcpSegment")){
-                            ActivePackets.append(protIter==0? (++iter)+". TCP": " -> TCP");
-                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+                            filtered.append(protIter==0? (++iter)+". TCP": " -> TCP");
+                            filtered.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
                             tcp = (TcpSegment) container;
                             container = tcp.body();
+                            used++;
                         }
                         break;
                     }
                     case "UDP": {
                         if (container.getClass().getSimpleName().equals("UdpDatagram")){
-                            ActivePackets.append(protIter==0? (++iter)+". UDP": " -> UDP");
-                            ActivePackets.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+                            filtered.append(protIter==0? (++iter)+". UDP": " -> UDP");
+                            filtered.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
 
                             udp = (UdpDatagram) container;
-                            container = udp.body();
+                            //container = udp.body();
+                            used++;
                         }
                         break;
                     }
                     case "HTTP": {
 
                     }
-                    case "DNS": {
 
-                    }
+                    case "DNS": {
+                        if (container.getClass().getSimpleName().equals("UdpDatagram")){
+                            udp = (UdpDatagram) container;
+                            if (udp.dstPort() == 53){
+                                filtered.append(protIter==0? (++iter)+". DNS": " -> DNS (Query)");
+                                filtered.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+                                used++;
+                            }
+
+                                if (udp.srcPort() == 53){
+                                    filtered.append(protIter==0? (++iter)+". DNS": " -> DNS (Answer)");
+                                    filtered.append(protIter == vectorOfProtocols.size()-1? "\n" : "");
+                                    used++;
+
+                                }
+                            }
+                        break;
+                        }
                     case "SSL/TLS": {
                     }
-                }
+                    default:{
+                        System.err.println(iter+": NO SUCH PROTOCOL FOUND!");
+                    }
+                  }
 
+             if (used == vectorOfProtocols.size()) ActivePackets.append(filtered.toString());
             }
         }
 
@@ -401,43 +465,3 @@ class View extends JFrame {
 
     }
 }
-/*
-        private void toMakeOnlyARP() {
-        this.remove(networkLevel);
-          this.remove(applicationLevel);
-          this.remove(transportLevel);
-
-          this.repaint();
-      }
-      private void toMakeOnlyEthernet() {
-         this.add(networkLevel);
-          this.add(applicationLevel);
-          this.add(transportLevel);
-
-          this.repaint();
-      }
-      */
-
-
-
-
-/*
-                          if (ipv4.body().getClass().toString().endsWith("TcpSegment")){
-                              tcp = (TcpSegment) ipv4.body();
-
-                            log.append("TCP:" + "\nsrcPort: ").append(tcp.srcPort()).append("\ndestPort: ").append(tcp.dstPort()).append("\nseqNum: ").append(tcp.seqNum()).append("\nackNum: ").append(tcp.ackNum()).append("\nb12: ").append(tcp.b12()).append("\nb13: ").append(tcp.b13()).append("\nwindowSize: ").append(tcp.windowSize()).append("\nchecksum: ").append(tcp.checksum()).append("\nurgentPointer").append(tcp.urgentPointer()).append("\ntcp body: ").append(Arrays.toString(tcp.body())).append("\n\n");
-                        }
-
-                        if (ipv4.body().getClass().toString().endsWith("UdpDatagram")){
-                            udp = (UdpDatagram) ipv4.body();
-
-                          log.append("UDP:" + "\nsrcPort: ").append(udp.srcPort()).append("\ndestPort: ").append(udp.dstPort()).append("\nlength: ").append(udp.length()).append("\nchecksum: ").append(udp.checksum()).append("\nudp body: ").append(Arrays.toString(udp.body())).append("\n\n");
-                        }
-                    }
-                }
-    }
-
-        System.out.println(log);
-    }
-}
-*/
